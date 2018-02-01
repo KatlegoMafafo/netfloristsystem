@@ -58,37 +58,45 @@
 		<!-- Navigation -->
 		<%@include file="./shared/navbar.jsp"%>
 
-		<!-- Page Content -->
-
-		 <div class="content" >
-
-			<!--loading the home content -->
+		<div class="content">
+			
+			<!-- Loading the home content -->
 			<c:if test="${userClickHome == true }">
-			<%@include file="home.jsp"%>
+				<%@include file="home.jsp"%>
 			</c:if>
 
-			<!-- only when user clicks about -->
+			<!-- Load only when user clicks about -->
 			<c:if test="${userClickAbout == true }">
 				<%@include file="about.jsp"%>
 			</c:if>
 
-			<!-- only when user clicks contact -->
+			<!-- Load only when user clicks contact -->
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
 			
-			<!-- only when user clicks contact -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts ==true}">
+			<!-- Load only when user clicks contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
 				<%@include file="listProducts.jsp"%>
-			</c:if>
+			</c:if>	
+			
 			
 			<!-- Load only when user clicks show product -->
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
-			</c:if>		
+			</c:if>								
 
-		 </div>
+			<!-- Load only when user clicks manage product -->
+			<c:if test="${userClickManageProduct == true}">
+				<%@include file="manageProducts.jsp"%>
+			</c:if>	
 
+			<!-- Load only when user clicks manage product -->
+			<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>	
+
+		</div>
 		<!-- footer section -->
 		<%@include file="./shared/footer.jsp"%>
 		<!-- jQuery -->
