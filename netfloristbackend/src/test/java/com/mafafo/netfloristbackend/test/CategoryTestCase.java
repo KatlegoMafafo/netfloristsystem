@@ -22,7 +22,7 @@ public class CategoryTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.mafafo.netfloristbackend");
 		context.refresh();
-		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
+		categoryDAO = (CategoryDAO)context.getBean("categoryDAO");
 	}
 
 	/*
