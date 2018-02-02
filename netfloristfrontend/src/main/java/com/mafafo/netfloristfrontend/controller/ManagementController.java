@@ -22,6 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.mafafo.netfloristbackend.dao.CategoryDAO;
 import com.mafafo.netfloristbackend.dao.ProductDAO;
 import com.mafafo.netfloristbackend.dto.Product;
+import com.mafafo.netfloristfrontend.util.FileUtil;
+import com.mafafo.netfloristfrontend.validator.ProductValidator;
+import com.mafafo.netfloristbackend.dto.Category;
 
 @Controller
 @RequestMapping("/manage")
@@ -151,3 +154,5 @@ public class ManagementController {
 	
 	
 }
+
+	

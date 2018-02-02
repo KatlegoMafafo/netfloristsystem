@@ -93,14 +93,18 @@
 
 			<!-- Load only when user clicks manage product -->
 			<c:if test="${userClickShowCart == true}">
-				<%@include file="cart.jsp"%>
+			<!-- 	 <%@include file="cart.jsp"%> -->
 			</c:if>	
 
 		</div>
-		<!-- footer section -->
+		
+		!-- Footer comes here -->
 		<%@include file="./shared/footer.jsp"%>
+
 		<!-- jQuery -->
 		<script src="${js}/jquery.js"></script>
+
+		<script src="${js}/jquery.validate.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
@@ -110,9 +114,13 @@
 		
 		<!-- DataTable Bootstrap Script -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
-
-		<!-- self coded javascript -->
+		
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/bootbox.min.js"></script>
+		
+		<!-- Self coded javascript -->
 		<script src="${js}/netflorist.js"></script>
+
 	</div>
 
 </body>
