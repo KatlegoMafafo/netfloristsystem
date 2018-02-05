@@ -23,13 +23,13 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public List<Category> list() {
-		
+
 		String selectActiveCategory = "FROM Category WHERE active = :active";
-		
+
 		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
-		
+
 		query.setParameter("active", true);
-		
+
 		return query.getResultList();
 	}
 
@@ -55,7 +55,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 	}
 
-	//updating a single category
+	// updating a single category
 	@Override
 	public boolean update(Category category) {
 		try {
@@ -71,9 +71,9 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public boolean delete(Category category) {
-		
+
 		category.setActive(false);
-		
+
 		try {
 			// add the category to the database table
 			sessionFactory.getCurrentSession().update(category);

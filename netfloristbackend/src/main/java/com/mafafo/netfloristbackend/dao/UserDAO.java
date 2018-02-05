@@ -3,7 +3,7 @@ package com.mafafo.netfloristbackend.dao;
 import java.util.List;
 
 import com.mafafo.netfloristbackend.dto.Address;
-import com.mafafo.netfloristbackend.dto.User;
+import com.mafafo.netfloristbackend.dto.Cart;
 import com.mafafo.netfloristbackend.dto.User;
 
 public interface UserDAO {
