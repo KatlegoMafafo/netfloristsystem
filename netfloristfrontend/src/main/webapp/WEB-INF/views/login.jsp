@@ -113,8 +113,8 @@
 									<div class="form-group">
 										<div class="col-md-offset-4 col-md-8">
 											<input type="hidden" name="${_csrf.parameterName}"
-												value="${_csrf.token}" /> <input type="submit" value="Login"
-												class="btn btn-primary" />
+												value="${_csrf.token}" /> <input type="submit"
+												value="Login" class="btn btn-primary" />
 										</div>
 									</div>
 								</form>
