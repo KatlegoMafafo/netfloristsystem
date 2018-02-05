@@ -1,11 +1,10 @@
 package com.mafafo.netfloristbackend.test;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-//import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.mafafo.netfloristbackend.dao.ProductDAO;
 import com.mafafo.netfloristbackend.dto.Product;
@@ -13,21 +12,23 @@ import com.mafafo.netfloristbackend.dto.Product;
 public class ProductTestCase {
 
 	private static AnnotationConfigApplicationContext context;
-
+	
+	
 	private static ProductDAO productDAO;
-
+	
+	
 	private Product product;
-
+	
+	
 	@BeforeClass
 	public static void init() {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("net.kzn.shoppingbackend");
 		context.refresh();
-		productDAO = (ProductDAO) context.getBean("productDAO");
-
+		productDAO = (ProductDAO)context.getBean("productDAO");
 	}
 	
-	/*	@Test
+/*	@Test
 	public void testCRUDProduct() {
 		
 		// create operation

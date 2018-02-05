@@ -54,10 +54,11 @@ body {
 }
 
 footer {
-	margin: 0px;
+	margin: 0;
 }
 
-/* custom styling
+/*
+	custom styling
 */
 .wrapper {
 	min-height: 100%;
@@ -65,13 +66,13 @@ footer {
 }
 
 .content {
-	padding-bottom: 60px;
-	/*footer height*/
+	padding-bottom: 60px; /*height of the footer*/
 }
 
 .footer {
+	width: 100%;
 	position: absolute;
-	bottom: 15px;
+	bottom: 20px;
 	height: 60px;
 }
 

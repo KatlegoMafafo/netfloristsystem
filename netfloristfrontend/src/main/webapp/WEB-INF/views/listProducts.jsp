@@ -2,21 +2,19 @@
 
 	<div class="row">
 
-		<!-- display sidebar -->
+
+		<!-- Would be to display sidebar -->
 		<div class="col-md-3">
 
 			<%@include file="./shared/sidebar.jsp"%>
 
 		</div>
 
-		<!-- to display products -->
+		<!-- to display the actual products -->
 		<div class="col-md-9">
-
 
 			<!-- Added breadcrumb component -->
 			<div class="row">
-
-
 
 				<div class="col-lg-12">
 
@@ -28,29 +26,37 @@
 
 						<ol class="breadcrumb">
 
+
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">All Products</li>
+
 
 						</ol>
 					</c:if>
 
-					<c:if test="${userClickCategoryProducts == true}">
 
+					<c:if test="${userClickCategoryProducts == true}">
 						<script>
 							window.categoryId = '${category.id}';
 						</script>
 
 						<ol class="breadcrumb">
 
+
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
 							<li class="active">${category.name}</li>
 
+
 						</ol>
 					</c:if>
+
+
 				</div>
 
+
 			</div>
+
 
 			<div class="row">
 
@@ -64,7 +70,7 @@
 						<thead>
 
 							<tr>
-								<th>ID</th>
+								<th></th>
 								<th>Name</th>
 								<th>Brand</th>
 								<th>Price</th>
@@ -74,6 +80,7 @@
 							</tr>
 
 						</thead>
+
 
 						<tfoot>
 
@@ -94,6 +101,16 @@
 
 			</div>
 
+
 		</div>
+
+
+
 	</div>
+
+
+
+
+
+
 </div>
