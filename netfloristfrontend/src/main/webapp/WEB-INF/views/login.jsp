@@ -53,8 +53,7 @@
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="${contextRoot}/home">Online
-						Shopping</a>
+					<a class="navbar-brand" href="${contextRoot}/home">Net Florist</a>
 				</div>
 			</div>
 		</nav>
@@ -122,7 +121,7 @@
 							</div>
 							<div class="panel-footer">
 								<div class="text-right">
-									New User - <a href="${contextRoot}/register">Register Here</a>
+									New User - <a href="${contextRoot}/membership">Register Here</a>
 								</div>
 							</div>
 
