@@ -6757,11 +6757,11 @@ button.close {
 }
 .navbar-default .badge {
   background-color: #fff;
-  color: #CD5C5C;
+  color: #e95420;
 }
 .navbar-inverse .badge {
   background-color: #fff;
-  color: #CD5C5C;
+  color: #772953;
 }
 @media (max-width: 767px) {
   .navbar .dropdown-menu a {
