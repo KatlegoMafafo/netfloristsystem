@@ -4,7 +4,8 @@
 		<br /> <br />
 		<h1>Contact Us</h1>
 		<hr />
-		<p>This is contact page</p>
+		<p>Call Us on: 0861 300 600</p>
+		
 	</div>
 
 </div>

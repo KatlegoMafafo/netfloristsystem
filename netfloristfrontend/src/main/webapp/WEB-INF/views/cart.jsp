@@ -102,7 +102,7 @@
 
 			<div class="jumbotron">
 
-				<h3 class="text-center">Your Cart is Empty!</h3>
+				<h3 class="text-center">Your Shopping Basket Empty!</h3>
 
 			</div>
 
