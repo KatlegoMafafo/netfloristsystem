@@ -45,7 +45,7 @@
 			<hr />
 
 			<h4>
-				Price: <strong> &#8377; ${product.unitPrice} /-</strong>
+				Price: <strong> &#36; ${product.unitPrice} /-</strong>
 			</h4>
 			<hr />
 

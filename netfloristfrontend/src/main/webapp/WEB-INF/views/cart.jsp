@@ -47,11 +47,11 @@
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">&#8377; ${cartLine.buyingPrice} /-</td>
+							<td data-th="Price">&#36; ${cartLine.buyingPrice} /-</td>
 							<td data-th="Quantity"><input type="number"
 								id="count_${cartLine.id}" class="form-control text-center"
 								value="${cartLine.productCount}" min="1" max="3"></td>
-							<td data-th="Subtotal" class="text-center">&#8377;
+							<td data-th="Subtotal" class="text-center">&#36;
 								${cartLine.total} /-</td>
 							<td class="actions" data-th=""><c:if
 									test="${cartLine.available == true}">
@@ -67,7 +67,7 @@
 				</tbody>
 				<tfoot>
 					<tr class="visible-xs">
-						<td class="text-center"><strong>Total &#8377;
+						<td class="text-center"><strong>Total &#36;
 								${userModel.cart.grandTotal}</strong></td>
 					</tr>
 					<tr>
@@ -77,7 +77,7 @@
 								Shopping</a></td>
 						<td colspan="2" class="hidden-xs"></td>
 						<td class="hidden-xs text-center"><strong>Total
-								&#8377; ${userModel.cart.grandTotal}/-</strong></td>
+								&#36; ${userModel.cart.grandTotal}/-</strong></td>
 
 						<c:choose>
 							<c:when test="${availableCount != 0}">

@@ -10,7 +10,7 @@
 				<div class="panel panel-primary">
 				
 					<div class="panel-heading">
-						<h4>Sign Up - Personal</h4>
+						<h4>Create a new profile!</h4>
 					</div>
 					
 					<div class="panel-body">
@@ -24,7 +24,7 @@
 						
 							
 							<div class="form-group">
-								<label class="control-label col-md-4">First Name</label>
+								<label class="control-label col-md-4">First Name *</label>
 								<div class="col-md-8">
 									<sf:input type="text" path="firstName" class="form-control"
 										placeholder="First Name" />
@@ -34,7 +34,7 @@
 
 
 							<div class="form-group">
-								<label class="control-label col-md-4">Last Name</label>
+								<label class="control-label col-md-4">Last Name *</label>
 								<div class="col-md-8">
 									<sf:input type="text" path="lastName" class="form-control"
 										placeholder="Last Name" />
@@ -43,7 +43,7 @@
 							</div>
 						
 							<div class="form-group">
-								<label class="control-label col-md-4">Email</label>
+								<label class="control-label col-md-4">Email *</label>
 								<div class="col-md-8">
 									<sf:input type="text" path="email" class="form-control"
 										placeholder="abc@zyx.com" />
@@ -52,7 +52,7 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-md-4">Contact Number</label>
+								<label class="control-label col-md-4">Contact Number *</label>
 								<div class="col-md-8">
 									<sf:input type="text" path="contactNumber" class="form-control"
 										placeholder="XXXXXXXXXX" maxlength="10" />
@@ -61,7 +61,7 @@
 							</div>
 							
 							<div class="form-group">
-								<label class="control-label col-md-4">Password</label>
+								<label class="control-label col-md-4">Password *</label>
 								<div class="col-md-8">
 									<sf:input type="password" path="password" class="form-control"
 										placeholder="Password" />
@@ -70,7 +70,7 @@
 							</div>
 							
 							<div class="form-group">
-								<label class="control-label col-md-4">Confirm Password</label>
+								<label class="control-label col-md-4">Confirm Password *</label>
 								<div class="col-md-8">
 									<sf:input type="password" path="confirmPassword" class="form-control"
 										placeholder="Re-type password" />

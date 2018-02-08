@@ -53,7 +53,7 @@
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="${contextRoot}/home">Net Florist</a>
+					<a class="navbar-brand" href="${contextRoot}/home"><img alt="" src="${images}/logo.jpg" height="40"></a>
 				</div>
 			</div>
 		</nav>
@@ -87,7 +87,7 @@
 						<div class="panel panel-primary">
 
 							<div class="panel-heading">
-								<h4>Login</h4>
+								<h4>Already have a profile?</h4>
 							</div>
 
 							<div class="panel-body">
@@ -121,7 +121,7 @@
 							</div>
 							<div class="panel-footer">
 								<div class="text-right">
-									New User - <a href="${contextRoot}/membership">Register Here</a>
+									New Account ? - <a href="${contextRoot}/membership">Register Here</a>
 								</div>
 							</div>
 

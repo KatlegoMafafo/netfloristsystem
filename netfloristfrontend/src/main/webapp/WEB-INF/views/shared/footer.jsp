@@ -15,7 +15,7 @@
 	<footer>
 		<div class="row">
 			<div class="col-lg-12">
-				<p>All contents Copyright&copy;  NetFlorist.co.za <img alt="" src="http://www.netflorist.co.za/layout/images/ft_paymentmethods_2017.jpg"></p>
+				<p>All contents Copyright&copy;  NetFlorist.co.za <img alt="" src="${images}/paymentmethods.jpg"></p>
 				
 				<p style="front-size: 4px;">NetFlorist is South Africa's leading online florist and
 					flower delivery site. NetFlorist brings you flowers and floral

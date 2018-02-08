@@ -13,11 +13,11 @@
 							<h3>${cartLine.product.name}</h3>
 							<hr/>
 							<h4>Quantity -${cartLine.productCount}</h4>
-							<h5>Buying Price - &#8377; ${cartLine.buyingPrice}/-</h5>							
+							<h5>Buying Price - &#36; ${cartLine.buyingPrice}/-</h5>							
 						</div>						
 						<hr/>
 						<div class="text-right">
-							<h3>Grand Total - &#8377; ${cartLine.total}/-</h3>
+							<h3>Grand Total - &#36; ${cartLine.total}/-</h3>
 						</div>						
 					</div>
 					</c:forEach>
@@ -68,7 +68,7 @@
 	                </div>
 	            </div>
 	            <ul class="nav nav-pills nav-stacked">
-	                <li class="active"><a href="#"><span class="badge pull-right"> &#8377; ${checkoutModel.checkoutTotal}/-</span> Final Payment</a></li>
+	                <li class="active"><a href="#"><span class="badge pull-right"> &#36; ${checkoutModel.checkoutTotal}/-</span> Final Payment</a></li>
 	            </ul>
 	            <br/>
 	            <a href="${flowExecutionUrl}&_eventId_pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>

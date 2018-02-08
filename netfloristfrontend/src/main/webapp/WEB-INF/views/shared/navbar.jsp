@@ -17,9 +17,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li id="about">
+                    <!-- <li id="about">
                         <a href="${contextRoot}/about">About</a>
-                    </li>
+                    </li> -->
 
                     <li id="contact">
                         <a href="${contextRoot}/contact">Contact</a>
@@ -37,11 +37,11 @@
 			    
 			    <ul class="nav navbar-nav navbar-right">
 			    	<security:authorize access="isAnonymous()">
-	                    <li id="signup">
+	                   <!--  <li id="signup">
 	                        <a href="${contextRoot}/membership">Sign Up</a>
-	                    </li>
+	                    </li> -->
 						<li id="login">
-	                        <a href="${contextRoot}/login">Login</a>
+	                        <a href="${contextRoot}/login">Login/Register</a>
 	                    </li> 			    	
 			    	</security:authorize>
 			    	<security:authorize access="isAuthenticated()">
@@ -54,7 +54,7 @@
 		                    <security:authorize access="hasAuthority('USER')">
 			                    <li id="cart">
 			                        <a href="${contextRoot}/cart/show">
-			                        	<span class="glyphicon glyphicon-shopping-cart"></span>&#160;<span class="badge">${userModel.cart.cartLines}</span> - &#8377; ${userModel.cart.grandTotal} 
+			                        	<span class="glyphicon glyphicon-shopping-cart"></span>&#160;<span class="badge">${userModel.cart.cartLines}</span> - &#36; ${userModel.cart.grandTotal} 
 			                        </a>
 			                    </li>		     
 			                	<li role="separator" class="divider"></li>	                                   
