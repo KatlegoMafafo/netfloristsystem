@@ -61,7 +61,6 @@ public class Product implements Serializable {
 
 	// default constructor
 	public Product() {
-
 		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
 
 	}
@@ -171,4 +170,4 @@ public class Product implements Serializable {
 				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
 				+ views + "]";
 	}
-}
+} // end of code

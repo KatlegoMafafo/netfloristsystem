@@ -16,9 +16,6 @@ import javax.persistence.Table;
 @Table(name = "order_item")
 public class OrderItem implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -48,6 +45,7 @@ public class OrderItem implements Serializable {
 
 	private double total;
 
+	// setters and getters
 	public int getId() {
 		return id;
 	}
@@ -87,5 +85,4 @@ public class OrderItem implements Serializable {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-
-}
+} // end of code

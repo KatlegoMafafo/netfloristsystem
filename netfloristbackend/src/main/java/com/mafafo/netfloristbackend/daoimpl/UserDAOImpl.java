@@ -15,9 +15,11 @@ import com.mafafo.netfloristbackend.dto.User;
 @Transactional
 public class UserDAOImpl implements UserDAO {
 
+	// Declaration
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	// get user email
 	@Override
 	public User getByEmail(String email) {
 		String selectQuery = "FROM User WHERE email = :email";
@@ -30,6 +32,7 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+	// adds new user
 	@Override
 	public boolean add(User user) {
 		try {
@@ -40,10 +43,11 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	// adds the address
 	@Override
 	public boolean addAddress(Address address) {
 		try {
-			// will look for this code later and why we need to change it
+
 			sessionFactory.getCurrentSession().persist(address);
 			return true;
 		} catch (Exception ex) {
@@ -51,6 +55,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	// updates address
 	@Override
 	public boolean updateAddress(Address address) {
 		try {
@@ -61,6 +66,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	// list the shipping address
 	@Override
 	public List<Address> listShippingAddresses(int userId) {
 		String selectQuery = "FROM Address WHERE userId = :userId AND shipping = :isShipping ORDER BY id DESC";
@@ -69,6 +75,7 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+	// gets the billing address
 	@Override
 	public Address getBillingAddress(int userId) {
 		String selectQuery = "FROM Address WHERE userId = :userId AND billing = :isBilling";
@@ -100,4 +107,4 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-}
+} // end code

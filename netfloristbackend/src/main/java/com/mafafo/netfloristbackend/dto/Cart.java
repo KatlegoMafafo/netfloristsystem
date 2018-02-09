@@ -12,9 +12,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Cart implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -24,7 +21,8 @@ public class Cart implements Serializable {
 	private double grandTotal;
 	@Column(name = "cart_lines")
 	private int cartLines;
-
+    
+	//setters and getters
 	public int getId() {
 		return id;
 	}
@@ -64,4 +62,4 @@ public class Cart implements Serializable {
 		this.user = user;
 	}
 	
-}
+} // end code

@@ -63,7 +63,6 @@ public class CartController {
 		
 	}
 	
-
 	@RequestMapping("/{cartLineId}/update")
 	public String udpateCartLine(@PathVariable int cartLineId, @RequestParam int count) {
 		String response = cartService.manageCartLine(cartLineId, count);		
@@ -96,4 +95,4 @@ public class CartController {
 			return "redirect:/cart/checkout";
 		}
 	}	
-}
+}// end of code

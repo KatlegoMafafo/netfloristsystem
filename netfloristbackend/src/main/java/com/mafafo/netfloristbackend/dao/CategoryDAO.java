@@ -6,7 +6,7 @@ import com.mafafo.netfloristbackend.dto.Category;
 
 public interface CategoryDAO {
 	
-	
+	//add, updates and deletes category
 	Category get(int id);
 	List<Category> list();
 	boolean add(Category category);

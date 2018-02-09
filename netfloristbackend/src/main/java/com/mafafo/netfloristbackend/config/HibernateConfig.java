@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 
-	// Change the below based on the DBMS you choose
+	// database connection and hibernate dialect
 	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/netfloristdb";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
@@ -65,7 +65,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 
-		// properties.put("hibernate.hbm2ddl.auto", "create");
+		
 
 		return properties;
 	}

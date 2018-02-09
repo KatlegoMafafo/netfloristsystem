@@ -150,9 +150,7 @@ public class ManagementController {
 	@ModelAttribute("category")
 	public Category modelCategory() {
 		return new Category();
-	}
-	
-	
-}
+	}	
+} //end of code
 
 	
