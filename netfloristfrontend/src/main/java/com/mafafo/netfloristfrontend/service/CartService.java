@@ -18,17 +18,16 @@ import com.mafafo.netfloristbackend.dao.UserDAO;
 @Service("cartService")
 public class CartService {
 
+	// Auto wiring DAO classes
 	@Autowired
 	private CartLineDAO cartLineDAO;
-
 	@Autowired
 	private ProductDAO productDAO;
-
 	@Autowired
 	private HttpSession session;
 
+	// gets cartline list
 	public List<CartLine> getCartLines() {
-
 		return cartLineDAO.list(getCart().getId());
 
 	}
@@ -61,6 +60,7 @@ public class CartService {
 		return "result=updated";
 	}
 
+	// add products to cartline
 	public String addCartLine(int productId) {
 		Cart cart = this.getCart();
 		String response = null;
@@ -120,7 +120,7 @@ public class CartService {
 	public String validateCartLine() {
 		Cart cart = this.getCart();
 		List<CartLine> cartLines = cartLineDAO.list(cart.getId());
-		double grandTotal = 0.0;
+		double grandTotal = 0.00;
 		int lineCount = 0;
 		String response = "result=success";
 		boolean changed = false;
@@ -174,7 +174,6 @@ public class CartService {
 		cart.setCartLines(lineCount++);
 		cart.setGrandTotal(grandTotal);
 		cartLineDAO.updateCart(cart);
-
 		return response;
 	}
-}
+} // end of code

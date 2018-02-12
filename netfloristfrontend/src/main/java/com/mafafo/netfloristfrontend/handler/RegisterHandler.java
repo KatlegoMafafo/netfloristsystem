@@ -15,9 +15,9 @@ import com.mafafo.netfloristfrontend.model.RegisterModel;
 @Component
 public class RegisterHandler {
 
+	// auto wires password encoder and user DAO
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-
 	@Autowired
 	private UserDAO userDAO;
 
@@ -25,14 +25,17 @@ public class RegisterHandler {
 		return new RegisterModel();
 	}
 
+	// set user to register
 	public void addUser(RegisterModel registerModel, User user) {
 		registerModel.setUser(user);
 	}
 
+	// sets register billing
 	public void addBilling(RegisterModel registerModel, Address billing) {
 		registerModel.setBilling(billing);
 	}
 
+	// validates password
 	public String validateUser(User user, MessageContext error) {
 		String transitionValue = "success";
 		if (!user.getPassword().equals(user.getConfirmPassword())) {
@@ -40,6 +43,7 @@ public class RegisterHandler {
 					.defaultText("Password does not match confirm password!").build());
 			transitionValue = "failure";
 		}
+		// validates the email to check if it exsist in the database
 		if (userDAO.getByEmail(user.getEmail()) != null) {
 			error.addMessage(new MessageBuilder().error().source("email").defaultText("Email address is already taken!")
 					.build());
@@ -48,6 +52,7 @@ public class RegisterHandler {
 		return transitionValue;
 	}
 
+	// saves registration and gets user role
 	public String saveAll(RegisterModel registerModel) {
 		String transitionValue = "success";
 		User user = registerModel.getUser();
@@ -70,4 +75,4 @@ public class RegisterHandler {
 		userDAO.addAddress(billing);
 		return transitionValue;
 	}
-} // end of handler
+} // end of code

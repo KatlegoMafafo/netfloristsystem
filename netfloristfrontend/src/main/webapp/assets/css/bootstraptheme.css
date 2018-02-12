@@ -3233,8 +3233,8 @@ fieldset[disabled] .btn-success.focus {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #772953;
-  border-color: #772953;
+  background-color: #CD5C5C;
+  border-color: #CD5C5C;
 }
 .btn-info:focus,
 .btn-info.focus {
@@ -3281,11 +3281,11 @@ fieldset[disabled] .btn-info:focus,
 .btn-info.disabled.focus,
 .btn-info[disabled].focus,
 fieldset[disabled] .btn-info.focus {
-  background-color: #772953;
-  border-color: #772953;
+  background-color: #CD5C5C;
+  border-color: #CD5C5C;
 }
 .btn-info .badge {
-  color: #772953;
+  color: #CD5C5C;
   background-color: #ffffff;
 }
 .btn-warning {
@@ -4593,7 +4593,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #cccccc;
 }
 .navbar-inverse {
-  background-color: #772953;
+  background-color: #CD5C5C;
   border-color: #511c39;
 }
 .navbar-inverse .navbar-brand {
@@ -4893,7 +4893,7 @@ a.label:focus {
   background-color: #2c8d3a;
 }
 .label-info {
-  background-color: #772953;
+  background-color: #CD5C5C;
 }
 .label-info[href]:hover,
 .label-info[href]:focus {
@@ -5174,7 +5174,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-info {
-  background-color: #772953;
+  background-color: #CD5C5C;
 }
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -6761,7 +6761,7 @@ button.close {
 }
 .navbar-inverse .badge {
   background-color: #fff;
-  color: #772953;
+  color: #CD5C5C;
 }
 @media (max-width: 767px) {
   .navbar .dropdown-menu a {

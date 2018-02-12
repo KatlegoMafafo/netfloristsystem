@@ -6,15 +6,13 @@ import com.mafafo.netfloristbackend.dto.Cart;
 
 public class UserModel implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
+	// private fields
 	private int id;
 	private String fullName;
 	private String role;
 
+	// setters and getters
 	public String getRole() {
 		return role;
 	}
@@ -49,9 +47,9 @@ public class UserModel implements Serializable {
 		this.cart = cart;
 	}
 
+	// generated to string methods
 	@Override
 	public String toString() {
 		return "UserModel [id=" + id + ", fullName=" + fullName + ", role=" + role + ", cart=" + cart + "]";
 	}
-
-}
+} // end of code

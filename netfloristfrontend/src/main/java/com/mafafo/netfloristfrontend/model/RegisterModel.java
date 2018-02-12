@@ -7,14 +7,12 @@ import com.mafafo.netfloristbackend.dto.User;
 
 public class RegisterModel implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
+	// private fields
 	private User user;
 	private Address billing;
 
+	// setters and getters
 	public User getUser() {
 		return user;
 	}
@@ -30,5 +28,4 @@ public class RegisterModel implements Serializable {
 	public void setBilling(Address billing) {
 		this.billing = billing;
 	}
-
-}
+} // end of code

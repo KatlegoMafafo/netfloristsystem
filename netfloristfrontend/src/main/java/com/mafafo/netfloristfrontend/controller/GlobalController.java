@@ -17,12 +17,13 @@ import com.mafafo.netfloristbackend.dto.User;
 @ControllerAdvice
 public class GlobalController {
 
+	// autowires userDAO and session
 	@Autowired
 	private UserDAO userDAO;
-
 	@Autowired
 	private HttpSession session;
 
+	// private fields
 	private UserModel userModel = null;
 	private User user = null;
 
@@ -37,8 +38,10 @@ public class GlobalController {
 				user = userDAO.getByEmail(authentication.getName());
 
 				if (user != null) {
+
 					// create a new model
 					userModel = new UserModel();
+
 					// set the name and the id
 					userModel.setId(user.getId());
 					userModel.setFullName(user.getFirstName() + " " + user.getLastName());
@@ -47,14 +50,11 @@ public class GlobalController {
 					if (user.getRole().equals("USER")) {
 						userModel.setCart(user.getCart());
 					}
-
 					session.setAttribute("userModel", userModel);
 					return userModel;
 				}
 			}
 		}
-
 		return (UserModel) session.getAttribute("userModel");
 	}
-
-}
+} // end of code

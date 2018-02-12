@@ -32,125 +32,108 @@ public class ManagementController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
 
+	// auto wires the productDAO and categoryDao
 	@Autowired
 	private ProductDAO productDAO;
-	
 	@Autowired
-	private CategoryDAO categoryDAO;		
+	private CategoryDAO categoryDAO;
 
+	// maps the products
 	@RequestMapping("/product")
-	public ModelAndView manageProduct(@RequestParam(name="success",required=false)String success) {		
+	public ModelAndView manageProduct(@RequestParam(name = "success", required = false) String success) {
 
-		ModelAndView mv = new ModelAndView("page");	
-		mv.addObject("title","Product Management");		
-		mv.addObject("userClickManageProduct",true);
-		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Product Management");
+		mv.addObject("userClickManageProduct", true);
+
 		Product nProduct = new Product();
-		
+
 		// assuming that the user is ADMIN
-		// later we will fixed it based on user is SUPPLIER or ADMIN
 		nProduct.setSupplierId(1);
 		nProduct.setActive(true);
-
 		mv.addObject("product", nProduct);
 
-		
-		if(success != null) {
-			if(success.equals("product")){
+		// if statement to add product to the database
+		if (success != null) {
+			if (success.equals("product")) {
 				mv.addObject("message", "Product submitted successfully!");
-			}	
-			else if (success.equals("category")) {
+			} else if (success.equals("category")) {
 				mv.addObject("message", "Category submitted successfully!");
 			}
 		}
-			
 		return mv;
-		
 	}
 
-	
+	// gets the product path for editing
 	@RequestMapping("/{id}/product")
-	public ModelAndView manageProductEdit(@PathVariable int id) {		
+	public ModelAndView manageProductEdit(@PathVariable int id) {
 
-		ModelAndView mv = new ModelAndView("page");	
-		mv.addObject("title","Product Management");		
-		mv.addObject("userClickManageProduct",true);
-		
-		// Product nProduct = new Product();		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Product Management");
+		mv.addObject("userClickManageProduct", true);
+
 		mv.addObject("product", productDAO.get(id));
-
-			
 		return mv;
-		
 	}
-	
-	
-	@RequestMapping(value = "/product", method=RequestMethod.POST)
-	public String managePostProduct(@Valid @ModelAttribute("product") Product mProduct, 
-			BindingResult results, Model model, HttpServletRequest request) {
-		
-		// mandatory file upload check
-		if(mProduct.getId() == 0) {
-			new ProductValidator().validate(mProduct, results);
-		}
-		else {
-			// edit check only when the file has been selected
-			if(!mProduct.getFile().getOriginalFilename().equals("")) {
-				new ProductValidator().validate(mProduct, results);
-			}			
-		}
-		
-		if(results.hasErrors()) {
-			model.addAttribute("message", "Validation fails for adding the product!");
-			model.addAttribute("userClickManageProduct",true);
-			return "page";
-		}			
 
-		
-		if(mProduct.getId() == 0 ) {
-			productDAO.add(mProduct);
+	@RequestMapping(value = "/product", method = RequestMethod.POST)
+	public String managePostProduct(@Valid @ModelAttribute("product") Product mProduct, BindingResult results,
+			Model model, HttpServletRequest request) {
+
+		// mandatory file upload check
+		if (mProduct.getId() == 0) {
+			new ProductValidator().validate(mProduct, results);
+		} else {
+			// edit check only when the file has been selected
+			if (!mProduct.getFile().getOriginalFilename().equals("")) {
+				new ProductValidator().validate(mProduct, results);
+			}
 		}
-		else {
+
+		// validate if the product was able to be added into the database
+		if (results.hasErrors()) {
+			model.addAttribute("message", "Validation fails for adding the product!");
+			model.addAttribute("userClickManageProduct", true);
+			return "page";
+		}
+		if (mProduct.getId() == 0) {
+			productDAO.add(mProduct);
+		} else {
 			productDAO.update(mProduct);
 		}
-	
-		 //upload the file
-		 if(!mProduct.getFile().getOriginalFilename().equals("") ){
-			FileUtil.uploadFile(request, mProduct.getFile(), mProduct.getCode()); 
-		 }
-		
+		// upload the file which in this chase its a picture
+		if (!mProduct.getFile().getOriginalFilename().equals("")) {
+			FileUtil.uploadFile(request, mProduct.getFile(), mProduct.getCode());
+		}
 		return "redirect:/manage/product?success=product";
 	}
 
-	
-	@RequestMapping(value = "/product/{id}/activation", method=RequestMethod.GET)
+	// activates or deactivate products
+	@RequestMapping(value = "/product/{id}/activation", method = RequestMethod.GET)
 	@ResponseBody
-	public String managePostProductActivation(@PathVariable int id) {		
+	public String managePostProductActivation(@PathVariable int id) {
 		Product product = productDAO.get(id);
 		boolean isActive = product.isActive();
 		product.setActive(!isActive);
-		productDAO.update(product);		
-		return (isActive)? "Product Dectivated Successfully!": "Product Activated Successfully";
+		productDAO.update(product);
+		return (isActive) ? "Product Dectivated Successfully!" : "Product Activated Successfully";
 	}
-			
 
-	@RequestMapping(value = "/category", method=RequestMethod.POST)
-	public String managePostCategory(@ModelAttribute("category") Category mCategory, HttpServletRequest request) {					
-		categoryDAO.add(mCategory);		
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
+	public String managePostCategory(@ModelAttribute("category") Category mCategory, HttpServletRequest request) {
+		categoryDAO.add(mCategory);
 		return "redirect:" + request.getHeader("Referer") + "?success=category";
 	}
-			
-	
-	
-	@ModelAttribute("categories") 
+
+	// return category list
+	@ModelAttribute("categories")
 	public List<Category> modelCategories() {
 		return categoryDAO.list();
 	}
-	
+
+	// return new categories
 	@ModelAttribute("category")
 	public Category modelCategory() {
 		return new Category();
-	}	
-} //end of code
-
-	
+	}
+} // end of code

@@ -41,7 +41,7 @@
 	                        <a href="${contextRoot}/membership">Sign Up</a>
 	                    </li> -->
 						<li id="login">
-	                        <a href="${contextRoot}/login">Login/Register</a>
+	                        <a href="${contextRoot}/login">Logon/Register</a>
 	                    </li> 			    	
 			    	</security:authorize>
 			    	<security:authorize access="isAuthenticated()">
