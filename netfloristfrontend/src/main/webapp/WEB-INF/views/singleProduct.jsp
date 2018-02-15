@@ -62,7 +62,6 @@
 				</c:when>
 				<c:otherwise>
 
-					<h6>Qty. Available: ${product.quantity}</h6>
 
 				</c:otherwise>
 
@@ -77,7 +76,7 @@
 
 						<a href="javascript:void(0)" class="btn btn-success disabled"><strike>
 								<span class="glyphicon glyphicon-shopping-cart"></span> Add to
-								Cart
+								basket
 						</strike></a>
 
 					</c:when>
@@ -85,7 +84,7 @@
 
 						<a href="${contextRoot}/cart/add/${product.id}/product"
 							class="btn btn-success"> <span
-							class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+							class="glyphicon glyphicon-shopping-cart"></span> Add to basket
 						</a>
 
 

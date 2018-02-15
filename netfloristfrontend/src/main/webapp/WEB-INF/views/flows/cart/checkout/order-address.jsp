@@ -6,7 +6,7 @@
 		
 			<div class="col-md-4">
 				
-				<h4>Select Shipping Address</h4>
+				<h4>Select Delivery Address</h4>
 				<hr/>
 				
 				<div class="row">
