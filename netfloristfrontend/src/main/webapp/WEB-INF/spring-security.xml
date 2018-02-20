@@ -21,6 +21,7 @@
 		<intercept-url pattern="/manage/**" access="hasAuthority('ADMIN')" />
 		<!-- only user access (who is registered) -->
 		<intercept-url pattern="/cart/**" access="hasAuthority('USER')" />
+	  <!--  <intercept-url pattern="/driverdelivery/**" access="hasAuthority('Driver')" /> -->
 		<!-- rest of the world -->
 		<intercept-url pattern="/**" access="permitAll" />
 		<form-login login-page="/login" />
